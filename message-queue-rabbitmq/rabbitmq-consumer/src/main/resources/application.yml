@@ -1,0 +1,18 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: rabbitmq-consumer
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  mail:
+    host: smtp.qq.com
+    username: 1242202279@qq.com
+    password: effagvizxkeqfedc
+
+mail:
+  from: 1242202279@qq.com
