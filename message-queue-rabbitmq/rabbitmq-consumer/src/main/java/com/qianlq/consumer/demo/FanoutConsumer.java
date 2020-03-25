@@ -1,5 +1,8 @@
 package com.qianlq.consumer.demo;
 
+import com.qianlq.core.constant.RabbitConstant;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -12,8 +15,10 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-@RabbitListener(queues = {"fanout"})
+@RabbitListener(queues = {RabbitConstant.FANOUT})
 public class FanoutConsumer {
+
+    private Logger logger = LogManager.getLogger(FanoutConsumer.class);
 
     private AmqpTemplate rabbitmqTemplate;
 
@@ -26,6 +31,6 @@ public class FanoutConsumer {
      */
     @RabbitHandler
     public void received(String msg) {
-        System.out.println("[fanout] received message:" + msg);
+        logger.info("[fanout] received message:" + msg);
     }
 }

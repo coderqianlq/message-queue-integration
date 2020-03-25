@@ -2,8 +2,8 @@ package com.qianlq.producer.service.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.qianlq.core.constant.RabbitConstant;
 import com.qianlq.core.model.dto.MailDTO;
-import com.qianlq.producer.config.rabbit.RabbitConfig;
 import com.qianlq.producer.service.MailService;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.stereotype.Service;
@@ -33,7 +33,7 @@ public class MailServiceImpl implements MailService {
         dto.setSubject(subject);
         dto.setContent(content);
         try {
-            rabbitTemplate.convertAndSend(RabbitConfig.MAIL, mapper.writeValueAsString(dto).getBytes());
+            rabbitTemplate.convertAndSend(RabbitConstant.MAIL, mapper.writeValueAsString(dto).getBytes());
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

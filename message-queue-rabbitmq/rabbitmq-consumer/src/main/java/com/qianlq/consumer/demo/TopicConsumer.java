@@ -1,5 +1,8 @@
 package com.qianlq.consumer.demo;
 
+import com.qianlq.core.constant.RabbitConstant;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -12,20 +15,22 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-@RabbitListener(queues = {"topic.a", "topic.b"})
+@RabbitListener(queues = {RabbitConstant.TOPIC_FIRST, RabbitConstant.TOPIC_SECOND})
 public class TopicConsumer {
 
-    private AmqpTemplate rabbitmqTemplate;
+    private Logger logger = LogManager.getLogger(TopicConsumer.class);
 
-    public TopicConsumer(AmqpTemplate rabbitmqTemplate) {
-        this.rabbitmqTemplate = rabbitmqTemplate;
+    private AmqpTemplate rabbitTemplate;
+
+    public TopicConsumer(AmqpTemplate rabbitTemplate) {
+        this.rabbitTemplate = rabbitTemplate;
     }
 
     /**
-     * 消息消费
+     * 使用监听器RabbitListener处理消息
      */
     @RabbitHandler
     public void received(String msg) {
-        System.out.println("[topic] received message: " + msg);
+        logger.info("[topic] received message: " + msg);
     }
 }

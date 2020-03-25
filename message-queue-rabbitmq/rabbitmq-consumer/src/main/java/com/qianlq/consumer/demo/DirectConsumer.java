@@ -1,5 +1,8 @@
 package com.qianlq.consumer.demo;
 
+import com.qianlq.core.constant.RabbitConstant;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -12,8 +15,10 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-@RabbitListener(queues = {"direct"})
+@RabbitListener(queues = {RabbitConstant.DIRECT})
 public class DirectConsumer {
+
+    private Logger logger = LogManager.getLogger(DirectConsumer.class);
 
     private AmqpTemplate rabbitmqTemplate;
 
@@ -26,7 +31,7 @@ public class DirectConsumer {
      */
     @RabbitHandler
     public void received(String msg) {
-        System.out.println("[direct] received message: " + msg);
+        logger.info("[direct] received message: " + msg);
     }
 
 }

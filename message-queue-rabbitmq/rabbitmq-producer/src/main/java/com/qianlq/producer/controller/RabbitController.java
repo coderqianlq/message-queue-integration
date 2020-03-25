@@ -29,7 +29,7 @@ public class RabbitController {
     }
 
     @PostMapping(value = "/{message}")
-    @ApiOperation(value = "发送指定字符串到string队列", notes = "发送指定字符串到string队列")
+    @ApiOperation(value = "发送指定字符串到direct队列", notes = "发送指定字符串到direct队列")
     public void sendString(@ApiParam(value = "message", required = true) @PathVariable String message) {
         rabbitService.send(message);
     }

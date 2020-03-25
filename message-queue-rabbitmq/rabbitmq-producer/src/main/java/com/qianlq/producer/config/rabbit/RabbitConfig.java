@@ -1,5 +1,6 @@
 package com.qianlq.producer.config.rabbit;
 
+import com.qianlq.core.constant.RabbitConstant;
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,53 +19,42 @@ import java.util.Map;
 @Configuration
 public class RabbitConfig {
 
-    public static final String DIRECT = "direct";
-    private static final String TOPIC_FIRST = "topic.a";
-    private static final String TOPIC_SECOND = "topic.b";
-    private static final String FANOUT = "fanout";
-    private static final String HEADERS = "headers";
 
-    public static final String DIRECT_EXCHANGE = "direct-exchange";
-    public static final String FANOUT_EXCHANGE = "fanout-exchange";
-    public static final String TOPIC_EXCHANGE = "topic-exchange";
-    public static final String HEADERS_EXCHANGE = "headers-exchange";
-
-    public static final String MAIL = "mail";
 
     @Bean
     public Queue directQueue() {
-        return new Queue(DIRECT);
+        return new Queue(RabbitConstant.DIRECT);
     }
 
     @Bean
     public Queue topicFirstQueue() {
-        return new Queue(TOPIC_FIRST);
+        return new Queue(RabbitConstant.TOPIC_FIRST);
     }
 
     @Bean
     public Queue topicSecondQueue() {
-        return new Queue(TOPIC_SECOND);
+        return new Queue(RabbitConstant.TOPIC_SECOND);
     }
 
     @Bean
     public Queue fanoutQueue() {
-        return new Queue(FANOUT);
+        return new Queue(RabbitConstant.FANOUT);
     }
 
     @Bean
     public Queue headersQueue() {
-        return new Queue(HEADERS);
+        return new Queue(RabbitConstant.HEADERS);
     }
 
     @Bean
     public Queue mailQueue() {
-        return new Queue(MAIL);
+        return new Queue(RabbitConstant.MAIL);
     }
 
     @Bean
     DirectExchange directExchange() {
         // 声明一个名为direct的direct交换器
-        return new DirectExchange(DIRECT_EXCHANGE);
+        return new DirectExchange(RabbitConstant.DIRECT_EXCHANGE);
     }
 
     @Bean
@@ -76,7 +66,7 @@ public class RabbitConfig {
     @Bean
     TopicExchange topicExchange() {
         // 声明一个名为topic的topic交换器
-        return new TopicExchange(TOPIC_EXCHANGE);
+        return new TopicExchange(RabbitConstant.TOPIC_EXCHANGE);
     }
 
     @Bean
@@ -94,7 +84,7 @@ public class RabbitConfig {
     @Bean
     FanoutExchange fanoutExchange() {
         // 声明一个名为fanout的fanout交换器
-        return new FanoutExchange(FANOUT_EXCHANGE);
+        return new FanoutExchange(RabbitConstant.FANOUT_EXCHANGE);
     }
 
     @Bean
@@ -105,7 +95,7 @@ public class RabbitConfig {
 
     @Bean
     HeadersExchange headersExchange() {
-        return new HeadersExchange(HEADERS_EXCHANGE);
+        return new HeadersExchange(RabbitConstant.HEADERS_EXCHANGE);
     }
 
     @Bean

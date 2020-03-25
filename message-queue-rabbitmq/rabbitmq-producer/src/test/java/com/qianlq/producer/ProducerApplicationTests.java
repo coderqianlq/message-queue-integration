@@ -43,7 +43,7 @@ public class ProducerApplicationTests {
 
     @Test
     public void testTopicSend() {
-        producer.topicSend(message);
+        producer.topicSend("[topic.a] send message: " + message);
 
         producer.topicSend("topic.a", "[topic.a] send message: " + message);
 
