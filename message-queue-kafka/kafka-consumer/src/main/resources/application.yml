@@ -1,0 +1,17 @@
+server:
+  port: 9095
+
+spring:
+  application:
+    name: kafka-consumer
+  kafka:
+    # kafka地址，多个地址之间用逗号分隔
+    bootstrap-servers: 127.0.0.1:9092
+    # 消费者配置
+    consumer:
+      group-id: kafka-consumer-group
+      # 初始偏移量，可选latest, earliest, none
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      max-poll-records: 100

@@ -3,15 +3,15 @@ package com.qianlq.producer.service;
 /**
  * @author coderqian
  * @version v1.0
- * @date 2019-09-22
+ * @date 2020-03-24
  */
 
-public interface RabbitService {
+public interface KafkaService {
 
     /**
-     * 发送指定字符串到消息队列
+     * 发送字符串
      *
-     * @param message 字符串
+     * @param message 消息内容
      */
     void send(String message);
 }

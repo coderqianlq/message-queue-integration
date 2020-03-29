@@ -2,7 +2,6 @@ package com.qianlq.consumer.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qianlq.consumer.config.MailConfig;
-import com.qianlq.consumer.constant.MailConstant;
 import com.qianlq.core.model.dto.MailDTO;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Message;

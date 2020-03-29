@@ -1,28 +1,31 @@
 package com.qianlq.core.model.dto;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 import java.io.Serializable;
 
 /**
  * @author coderqian
- * @date 2019-09-22 20:10
- * @since v1.0
+ * @version v1.0
+ * @date 2020-03-25
+ * @description 邮件传输实体
  */
 
-@ApiModel("邮件传输实体")
 public class MailDTO implements Serializable {
 
     private static final long serialVersionUID = 8888208961878772691L;
 
-    @ApiModelProperty("邮件接收人")
+    /**
+     * 邮件接收人
+     */
     private String to;
 
-    @ApiModelProperty("邮件主题")
+    /**
+     * 邮件主题
+     */
     private String subject;
 
-    @ApiModelProperty("邮件内容")
+    /**
+     * 邮件内容
+     */
     private String content;
 
     public String getTo() {

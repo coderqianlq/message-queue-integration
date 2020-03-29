@@ -3,29 +3,35 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>rabbitmq-producer</artifactId>
+    <artifactId>kafka-consumer</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>
         <groupId>com.qianlq</groupId>
-        <artifactId>message-queue-rabbitmq</artifactId>
+        <artifactId>message-queue-kafka</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <properties>
-        <springfox-swagger2.version>2.7.0</springfox-swagger2.version>
+        <spring-kafka.version>2.2.6.RELEASE</spring-kafka.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.qianlq</groupId>
-            <artifactId>rabbitmq-core</artifactId>
+            <artifactId>kafka-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -34,27 +40,23 @@
             <version>2.1.4.RELEASE</version>
         </dependency>
 
+        <!-- 日志 Log4j2 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
+        <!-- Kafka -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${springfox-swagger2.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${springfox-swagger2.version}</version>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>${spring-kafka.version}</version>
         </dependency>
     </dependencies>
 
@@ -66,4 +68,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

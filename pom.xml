@@ -18,7 +18,7 @@
 
     <modules>
         <module>message-queue-rabbitmq</module>
-        <!--<module>message-queue-kafka</module>-->
+        <module>message-queue-kafka</module>
     </modules>
 
 </project>

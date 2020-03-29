@@ -8,8 +8,8 @@ import javax.validation.constraints.Pattern;
 
 /**
  * @author coderqian
- * @date 2019-09-22 19:10
- * @since v1.0
+ * @version v1.0
+ * @date 2019-09-22
  */
 
 @ApiModel("邮件参数实体")

@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * @author coderqian
  * @version v1.0
- * @date 2019-09-22
+ * @date 2020-03-24
  */
 
 @Configuration
@@ -45,8 +45,8 @@ public class Swagger2 {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("rabbit-producer")
-                .description("Learn Spring Boot + RabbitMQ")
+                .title("kafka-producer")
+                .description("Learn Spring Boot + Kafka")
                 .termsOfServiceUrl("https://www.qianlq.com")
                 .version("1.0")
                 .build();
