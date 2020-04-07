@@ -1,6 +1,6 @@
 ## Message-Queue-Integration
 
-[![Build Status](https://travis-ci.org/coderqianlq/spring-cloud-learning.svg?branch=master)](https://travis-ci.org/coderqianlq/spring-cloud-learning)
+[![Build Status](https://travis-ci.org/coderqianlq/message-queue-integration.svg?branch=master)](https://travis-ci.org/github/coderqianlq/message-queue-integration)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Coverage Status](https://coveralls.io/repos/github/coderqianlq/message-queue-integration/badge.svg)](https://coveralls.io/github/coderqianlq/message-queue-integration)
 
