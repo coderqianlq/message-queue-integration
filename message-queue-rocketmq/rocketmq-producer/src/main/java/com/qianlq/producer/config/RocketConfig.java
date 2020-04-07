@@ -59,9 +59,9 @@ public class RocketConfig {
 
         try {
             producer.start();
-            logger.info("producer is start ! groupName:{},nameServerAddr:{}", groupName, nameServerAddr);
+            logger.info("producer is start ! groupName: {},nameServerAddr: {}", groupName, nameServerAddr);
         } catch (MQClientException ex) {
-            logger.error("producer is error {}", ex.getMessage());
+            logger.error("producer is error: {}", ex.getMessage());
             throw ex;
         }
         return producer;

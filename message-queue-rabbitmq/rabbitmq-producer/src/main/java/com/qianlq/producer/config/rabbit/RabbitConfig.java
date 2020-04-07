@@ -19,8 +19,6 @@ import java.util.Map;
 @Configuration
 public class RabbitConfig {
 
-
-
     @Bean
     public Queue directQueue() {
         return new Queue(RabbitConstant.DIRECT);

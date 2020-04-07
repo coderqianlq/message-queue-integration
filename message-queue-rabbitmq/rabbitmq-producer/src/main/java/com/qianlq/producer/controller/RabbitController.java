@@ -6,6 +6,7 @@ import com.qianlq.producer.service.RabbitService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -36,7 +37,7 @@ public class RabbitController {
 
     @PostMapping(value = "/mail")
     @ApiOperation(value = "异步发送邮件", notes = "异步发送邮件")
-    public void sendMail(@RequestBody MailParamVO mpr) {
+    public void sendMail(@RequestBody @Validated MailParamVO mpr) {
         mailService.sendMail(mpr.getTo(), mpr.getSubject(), mpr.getContent());
     }
 }

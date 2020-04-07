@@ -1,180 +1,13 @@
-2020-03-29 12:28:21 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-6230327741655139958/meta.properties
-2020-03-29 12:28:21 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-6230327741655139958/meta.properties
-2020-03-29 12:28:22 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1381261757473608074/meta.properties
-2020-03-29 12:28:22 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1381261757473608074/meta.properties
-2020-03-29 12:28:22 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-5159073110515642880/meta.properties
-2020-03-29 12:28:22 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-5159073110515642880/meta.properties
-2020-03-29 12:28:22 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-5824753676926043257/meta.properties
-2020-03-29 12:28:22 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-5824753676926043257/meta.properties
-2020-03-29 12:30:22 [Thread: kafka-log-cleaner-thread-0] [ ERROR] LogDirFailureChannel:76 - Error while reading checkpoint file /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1381261757473608074/cleaner-offset-checkpoint
-java.io.FileNotFoundException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1381261757473608074/cleaner-offset-checkpoint (No such file or directory)
-	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_161]
-	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_161]
-	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_161]
-	at kafka.server.checkpoints.CheckpointFile.liftedTree2$1(CheckpointFile.scala:87) [kafka_2.11-2.0.1.jar:?]
-	at kafka.server.checkpoints.CheckpointFile.read(CheckpointFile.scala:86) [kafka_2.11-2.0.1.jar:?]
-	at kafka.server.checkpoints.OffsetCheckpointFile.read(OffsetCheckpointFile.scala:61) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager$$anonfun$allCleanerCheckpoints$1$$anonfun$apply$1.apply(LogCleanerManager.scala:89) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager$$anonfun$allCleanerCheckpoints$1$$anonfun$apply$1.apply(LogCleanerManager.scala:87) [kafka_2.11-2.0.1.jar:?]
-	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241) [scala-library-2.11.12.jar:?]
-	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241) [scala-library-2.11.12.jar:?]
-	at scala.collection.Iterator$class.foreach(Iterator.scala:891) [scala-library-2.11.12.jar:?]
-	at scala.collection.AbstractIterator.foreach(Iterator.scala:1334) [scala-library-2.11.12.jar:?]
-	at scala.collection.MapLike$DefaultValuesIterable.foreach(MapLike.scala:206) [scala-library-2.11.12.jar:?]
-	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241) [scala-library-2.11.12.jar:?]
-	at scala.collection.AbstractTraversable.flatMap(Traversable.scala:104) [scala-library-2.11.12.jar:?]
-	at kafka.log.LogCleanerManager$$anonfun$allCleanerCheckpoints$1.apply(LogCleanerManager.scala:87) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager$$anonfun$allCleanerCheckpoints$1.apply(LogCleanerManager.scala:95) [kafka_2.11-2.0.1.jar:?]
-	at kafka.utils.CoreUtils$.inLock(CoreUtils.scala:251) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager.allCleanerCheckpoints(LogCleanerManager.scala:86) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager$$anonfun$grabFilthiestCompactedLog$1.apply(LogCleanerManager.scala:126) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager$$anonfun$grabFilthiestCompactedLog$1.apply(LogCleanerManager.scala:123) [kafka_2.11-2.0.1.jar:?]
-	at kafka.utils.CoreUtils$.inLock(CoreUtils.scala:251) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager.grabFilthiestCompactedLog(LogCleanerManager.scala:123) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleaner$CleanerThread.cleanOrSleep(LogCleaner.scala:296) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleaner$CleanerThread.doWork(LogCleaner.scala:289) [kafka_2.11-2.0.1.jar:?]
-	at kafka.utils.ShutdownableThread.run(ShutdownableThread.scala:82) [kafka_2.11-2.0.1.jar:?]
-2020-03-29 12:30:22 [Thread: kafka-log-cleaner-thread-0] [ ERROR] LogCleaner:76 - Failed to access checkpoint file cleaner-offset-checkpoint in dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1381261757473608074
-org.apache.kafka.common.errors.KafkaStorageException: Error while reading checkpoint file /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1381261757473608074/cleaner-offset-checkpoint
-Caused by: java.io.FileNotFoundException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1381261757473608074/cleaner-offset-checkpoint (No such file or directory)
-	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_161]
-	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_161]
-	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_161]
-	at kafka.server.checkpoints.CheckpointFile.liftedTree2$1(CheckpointFile.scala:87) ~[kafka_2.11-2.0.1.jar:?]
-	at kafka.server.checkpoints.CheckpointFile.read(CheckpointFile.scala:86) ~[kafka_2.11-2.0.1.jar:?]
-	at kafka.server.checkpoints.OffsetCheckpointFile.read(OffsetCheckpointFile.scala:61) ~[kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager$$anonfun$allCleanerCheckpoints$1$$anonfun$apply$1.apply(LogCleanerManager.scala:89) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager$$anonfun$allCleanerCheckpoints$1$$anonfun$apply$1.apply(LogCleanerManager.scala:87) [kafka_2.11-2.0.1.jar:?]
-	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241) [scala-library-2.11.12.jar:?]
-	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241) [scala-library-2.11.12.jar:?]
-	at scala.collection.Iterator$class.foreach(Iterator.scala:891) [scala-library-2.11.12.jar:?]
-	at scala.collection.AbstractIterator.foreach(Iterator.scala:1334) [scala-library-2.11.12.jar:?]
-	at scala.collection.MapLike$DefaultValuesIterable.foreach(MapLike.scala:206) [scala-library-2.11.12.jar:?]
-	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241) [scala-library-2.11.12.jar:?]
-	at scala.collection.AbstractTraversable.flatMap(Traversable.scala:104) [scala-library-2.11.12.jar:?]
-	at kafka.log.LogCleanerManager$$anonfun$allCleanerCheckpoints$1.apply(LogCleanerManager.scala:87) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager$$anonfun$allCleanerCheckpoints$1.apply(LogCleanerManager.scala:95) [kafka_2.11-2.0.1.jar:?]
-	at kafka.utils.CoreUtils$.inLock(CoreUtils.scala:251) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager.allCleanerCheckpoints(LogCleanerManager.scala:86) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager$$anonfun$grabFilthiestCompactedLog$1.apply(LogCleanerManager.scala:126) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager$$anonfun$grabFilthiestCompactedLog$1.apply(LogCleanerManager.scala:123) [kafka_2.11-2.0.1.jar:?]
-	at kafka.utils.CoreUtils$.inLock(CoreUtils.scala:251) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleanerManager.grabFilthiestCompactedLog(LogCleanerManager.scala:123) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleaner$CleanerThread.cleanOrSleep(LogCleaner.scala:296) [kafka_2.11-2.0.1.jar:?]
-	at kafka.log.LogCleaner$CleanerThread.doWork(LogCleaner.scala:289) [kafka_2.11-2.0.1.jar:?]
-	at kafka.utils.ShutdownableThread.run(ShutdownableThread.scala:82) [kafka_2.11-2.0.1.jar:?]
-2020-03-29 12:30:22 [Thread: LogDirFailureHandler] [ ERROR] LogManager:79 - Shutdown broker because all log dirs in /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1381261757473608074 have failed
-2020-03-29 14:56:34 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-6831779408485945743/meta.properties
-2020-03-29 14:56:35 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-6831779408485945743/meta.properties
-2020-03-29 14:56:35 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-8055646323639733140/meta.properties
-2020-03-29 14:56:35 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-8055646323639733140/meta.properties
-2020-03-29 14:56:35 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-2508390031673553086/meta.properties
-2020-03-29 14:56:35 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-2508390031673553086/meta.properties
-2020-03-29 14:56:35 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-4018189220179721988/meta.properties
-2020-03-29 14:56:35 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-4018189220179721988/meta.properties
-2020-03-29 14:56:36 [Thread: main] [ WARN ] GenericWebApplicationContext:557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'kafkaTest': Unsatisfied dependency expressed through field 'kafkaTemplate'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.kafka.core.KafkaTemplate<java.lang.String, java.lang.String>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2020-03-29 14:56:36 [Thread: controller-event-thread] [ ERROR] KafkaZkClient$CheckedEphemeral:74 - Error while creating ephemeral at /controller, node already exists and owner '72060672202506244' does not match current session '72060672202506243'
-2020-03-29 14:56:36 [Thread: controller-event-thread] [ ERROR] KafkaZkClient$CheckedEphemeral:74 - Error while creating ephemeral at /controller, node already exists and owner '72060672202506244' does not match current session '72060672202506242'
-2020-03-29 14:56:47 [Thread: main] [ ERROR] LoggingFailureAnalysisReporter:42 - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field kafkaTemplate in com.qianlq.producer.kafka.KafkaTest required a bean of type 'org.springframework.kafka.core.KafkaTemplate' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'org.springframework.kafka.core.KafkaTemplate' in your configuration.
-
-2020-03-29 14:56:47 [Thread: main] [ ERROR] TestContextManager:250 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@3e27ba32] to prepare test instance [com.qianlq.producer.kafka.KafkaTest@3e104d4b]
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'kafkaTest': Unsatisfied dependency expressed through field 'kafkaTemplate'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.kafka.core.KafkaTemplate<java.lang.String, java.lang.String>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:843) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127) ~[spring-boot-test-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	... 24 more
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.kafka.core.KafkaTemplate<java.lang.String, java.lang.String>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1655) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1214) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1168) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:843) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127) ~[spring-boot-test-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	... 24 more
-2020-03-29 15:03:39 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-8834745306878295158/meta.properties
-2020-03-29 15:03:39 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-8834745306878295158/meta.properties
-2020-03-29 15:03:40 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-554353193033163112/meta.properties
-2020-03-29 15:03:40 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-554353193033163112/meta.properties
-2020-03-29 15:03:40 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-4892789514270784070/meta.properties
-2020-03-29 15:03:40 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-4892789514270784070/meta.properties
-2020-03-29 15:03:40 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-3727556271637017733/meta.properties
-2020-03-29 15:03:40 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-3727556271637017733/meta.properties
-2020-03-29 15:03:41 [Thread: Thread-9] [ WARN ] CoreUtils$:90 - /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-8834745306878295158/.kafka_cleanshutdown
-java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-8834745306878295158/.kafka_cleanshutdown
+2020-04-07 11:06:36 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-4661499049755691486/meta.properties
+2020-04-07 11:06:36 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-4661499049755691486/meta.properties
+2020-04-07 11:06:37 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1993400207578155708/meta.properties
+2020-04-07 11:06:37 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1993400207578155708/meta.properties
+2020-04-07 11:06:37 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-2142763693714325883/meta.properties
+2020-04-07 11:06:37 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-2142763693714325883/meta.properties
+2020-04-07 11:06:37 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-3311787846110841863/meta.properties
+2020-04-07 11:06:38 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-3311787846110841863/meta.properties
+2020-04-07 11:06:39 [Thread: Thread-10] [ WARN ] CoreUtils$:90 - /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-4661499049755691486/.kafka_cleanshutdown
+java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-4661499049755691486/.kafka_cleanshutdown
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_161]
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_161]
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_161]
@@ -205,10 +38,10 @@ java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000g
 	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-2020-03-29 15:03:41 [Thread: controller-event-thread] [ ERROR] KafkaZkClient$CheckedEphemeral:74 - Error while creating ephemeral at /controller, node already exists and owner '72060700027518980' does not match current session '72060700027518978'
-2020-03-29 15:03:41 [Thread: controller-event-thread] [ ERROR] KafkaZkClient$CheckedEphemeral:74 - Error while creating ephemeral at /controller, node already exists and owner '72060700027518980' does not match current session '72060700027518979'
-2020-03-29 15:03:45 [Thread: Thread-9] [ WARN ] CoreUtils$:90 - /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-554353193033163112/.kafka_cleanshutdown
-java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-554353193033163112/.kafka_cleanshutdown
+2020-04-07 11:06:39 [Thread: controller-event-thread] [ ERROR] KafkaZkClient$CheckedEphemeral:74 - Error while creating ephemeral at /controller, node already exists and owner '72060399306539011' does not match current session '72060399306539012'
+2020-04-07 11:06:39 [Thread: controller-event-thread] [ ERROR] KafkaZkClient$CheckedEphemeral:74 - Error while creating ephemeral at /controller, node already exists and owner '72060399306539011' does not match current session '72060399306539010'
+2020-04-07 11:06:43 [Thread: Thread-10] [ WARN ] CoreUtils$:90 - /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1993400207578155708/.kafka_cleanshutdown
+java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1993400207578155708/.kafka_cleanshutdown
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_161]
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_161]
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_161]
@@ -239,8 +72,8 @@ java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000g
 	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-2020-03-29 15:03:49 [Thread: Thread-9] [ WARN ] CoreUtils$:90 - /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-4892789514270784070/.kafka_cleanshutdown
-java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-4892789514270784070/.kafka_cleanshutdown
+2020-04-07 11:06:45 [Thread: Thread-10] [ WARN ] CoreUtils$:90 - /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-2142763693714325883/.kafka_cleanshutdown
+java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-2142763693714325883/.kafka_cleanshutdown
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_161]
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_161]
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_161]
@@ -271,8 +104,8 @@ java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000g
 	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-2020-03-29 15:03:52 [Thread: Thread-9] [ WARN ] CoreUtils$:90 - /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-3727556271637017733/.kafka_cleanshutdown
-java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-3727556271637017733/.kafka_cleanshutdown
+2020-04-07 11:06:48 [Thread: Thread-10] [ WARN ] CoreUtils$:90 - /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-3311787846110841863/.kafka_cleanshutdown
+java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-3311787846110841863/.kafka_cleanshutdown
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_161]
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_161]
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_161]
@@ -303,104 +136,142 @@ java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000g
 	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
 	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-2020-03-29 15:08:49 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-6083626373972842472/meta.properties
-2020-03-29 15:08:49 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-6083626373972842472/meta.properties
-2020-03-29 15:08:49 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-3538918978240851635/meta.properties
-2020-03-29 15:08:49 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-3538918978240851635/meta.properties
-2020-03-29 15:08:50 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-6659499129688916420/meta.properties
-2020-03-29 15:08:50 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-6659499129688916420/meta.properties
-2020-03-29 15:08:50 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1552016900308476783/meta.properties
-2020-03-29 15:08:50 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-1552016900308476783/meta.properties
-2020-03-29 15:08:50 [Thread: main] [ WARN ] GenericWebApplicationContext:557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'kafkaTest': Unsatisfied dependency expressed through field 'kafkaTemplate'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.kafka.core.KafkaTemplate<java.lang.String, java.lang.String>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2020-03-29 15:08:51 [Thread: controller-event-thread] [ ERROR] KafkaZkClient$CheckedEphemeral:74 - Error while creating ephemeral at /controller, node already exists and owner '72060720328081412' does not match current session '72060720328081411'
-2020-03-29 15:08:51 [Thread: controller-event-thread] [ ERROR] KafkaZkClient$CheckedEphemeral:74 - Error while creating ephemeral at /controller, node already exists and owner '72060720328081412' does not match current session '72060720328081410'
-2020-03-29 15:09:04 [Thread: main] [ ERROR] LoggingFailureAnalysisReporter:42 - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field kafkaTemplate in com.qianlq.producer.kafka.KafkaTest required a bean of type 'org.springframework.kafka.core.KafkaTemplate' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'org.springframework.kafka.core.KafkaTemplate' in your configuration.
-
-2020-03-29 15:09:04 [Thread: main] [ ERROR] TestContextManager:250 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@3e27ba32] to prepare test instance [com.qianlq.producer.kafka.KafkaTest@3e104d4b]
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68) [junit-rt.jar:?]
-	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47) [junit-rt.jar:?]
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242) [junit-rt.jar:?]
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70) [junit-rt.jar:?]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'kafkaTest': Unsatisfied dependency expressed through field 'kafkaTemplate'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.kafka.core.KafkaTemplate<java.lang.String, java.lang.String>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:843) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127) ~[spring-boot-test-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	... 24 more
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.kafka.core.KafkaTemplate<java.lang.String, java.lang.String>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1655) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1214) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1168) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:843) ~[spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127) ~[spring-boot-test-2.1.5.RELEASE.jar:2.1.5.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.7.RELEASE.jar:5.1.7.RELEASE]
-	... 24 more
+2020-04-07 15:59:41 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-7152749492694360216/meta.properties
+2020-04-07 15:59:42 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-7152749492694360216/meta.properties
+2020-04-07 15:59:42 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-2028772944758408940/meta.properties
+2020-04-07 15:59:43 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-2028772944758408940/meta.properties
+2020-04-07 15:59:43 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-496992175685025356/meta.properties
+2020-04-07 15:59:43 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-496992175685025356/meta.properties
+2020-04-07 15:59:43 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-6714200143416712346/meta.properties
+2020-04-07 15:59:43 [Thread: main] [ WARN ] BrokerMetadataCheckpoint:70 - No meta.properties file under dir /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-6714200143416712346/meta.properties
+2020-04-07 15:59:45 [Thread: Thread-10] [ WARN ] CoreUtils$:90 - /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-7152749492694360216/.kafka_cleanshutdown
+java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-7152749492694360216/.kafka_cleanshutdown
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_161]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_161]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_161]
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214) ~[?:1.8.0_161]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_161]
+	at java.nio.file.Files.createFile(Files.java:632) ~[?:1.8.0_161]
+	at kafka.log.LogManager$$anonfun$shutdown$6$$anonfun$apply$4.apply$mcV$sp(LogManager.scala:476) ~[kafka_2.11-2.0.1.jar:?]
+	at kafka.utils.CoreUtils$.swallow(CoreUtils.scala:86) [kafka_2.11-2.0.1.jar:?]
+	at kafka.log.LogManager$$anonfun$shutdown$6.apply(LogManager.scala:476) [kafka_2.11-2.0.1.jar:?]
+	at kafka.log.LogManager$$anonfun$shutdown$6.apply(LogManager.scala:464) [kafka_2.11-2.0.1.jar:?]
+	at scala.collection.TraversableLike$WithFilter$$anonfun$foreach$1.apply(TraversableLike.scala:733) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:130) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:130) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:236) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:40) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:130) [scala-library-2.11.12.jar:?]
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:732) [scala-library-2.11.12.jar:?]
+	at kafka.log.LogManager.shutdown(LogManager.scala:464) [kafka_2.11-2.0.1.jar:?]
+	at kafka.server.KafkaServer$$anonfun$shutdown$13.apply$mcV$sp(KafkaServer.scala:598) [kafka_2.11-2.0.1.jar:?]
+	at kafka.utils.CoreUtils$.swallow(CoreUtils.scala:86) [kafka_2.11-2.0.1.jar:?]
+	at kafka.server.KafkaServer.shutdown(KafkaServer.scala:598) [kafka_2.11-2.0.1.jar:?]
+	at org.springframework.kafka.test.EmbeddedKafkaBroker.destroy(EmbeddedKafkaBroker.java:327) [spring-kafka-test-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1034) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1027) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+2020-04-07 15:59:45 [Thread: controller-event-thread] [ ERROR] KafkaZkClient$CheckedEphemeral:74 - Error while creating ephemeral at /controller, node already exists and owner '72061298197528578' does not match current session '72061298197528579'
+2020-04-07 15:59:45 [Thread: controller-event-thread] [ ERROR] KafkaZkClient$CheckedEphemeral:74 - Error while creating ephemeral at /controller, node already exists and owner '72061298197528578' does not match current session '72061298197528580'
+2020-04-07 15:59:48 [Thread: Thread-10] [ WARN ] CoreUtils$:90 - /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-2028772944758408940/.kafka_cleanshutdown
+java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-2028772944758408940/.kafka_cleanshutdown
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_161]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_161]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_161]
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214) ~[?:1.8.0_161]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_161]
+	at java.nio.file.Files.createFile(Files.java:632) ~[?:1.8.0_161]
+	at kafka.log.LogManager$$anonfun$shutdown$6$$anonfun$apply$4.apply$mcV$sp(LogManager.scala:476) ~[kafka_2.11-2.0.1.jar:?]
+	at kafka.utils.CoreUtils$.swallow(CoreUtils.scala:86) [kafka_2.11-2.0.1.jar:?]
+	at kafka.log.LogManager$$anonfun$shutdown$6.apply(LogManager.scala:476) [kafka_2.11-2.0.1.jar:?]
+	at kafka.log.LogManager$$anonfun$shutdown$6.apply(LogManager.scala:464) [kafka_2.11-2.0.1.jar:?]
+	at scala.collection.TraversableLike$WithFilter$$anonfun$foreach$1.apply(TraversableLike.scala:733) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:130) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:130) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:236) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:40) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:130) [scala-library-2.11.12.jar:?]
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:732) [scala-library-2.11.12.jar:?]
+	at kafka.log.LogManager.shutdown(LogManager.scala:464) [kafka_2.11-2.0.1.jar:?]
+	at kafka.server.KafkaServer$$anonfun$shutdown$13.apply$mcV$sp(KafkaServer.scala:598) [kafka_2.11-2.0.1.jar:?]
+	at kafka.utils.CoreUtils$.swallow(CoreUtils.scala:86) [kafka_2.11-2.0.1.jar:?]
+	at kafka.server.KafkaServer.shutdown(KafkaServer.scala:598) [kafka_2.11-2.0.1.jar:?]
+	at org.springframework.kafka.test.EmbeddedKafkaBroker.destroy(EmbeddedKafkaBroker.java:327) [spring-kafka-test-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1034) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1027) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+2020-04-07 15:59:48 [Thread: controller-event-thread] [ ERROR] KafkaZkClient$CheckedEphemeral:74 - Error while creating ephemeral at /controller, node already exists and owner '72061298197528580' does not match current session '72061298197528579'
+2020-04-07 15:59:52 [Thread: Thread-10] [ WARN ] CoreUtils$:90 - /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-496992175685025356/.kafka_cleanshutdown
+java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-496992175685025356/.kafka_cleanshutdown
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_161]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_161]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_161]
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214) ~[?:1.8.0_161]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_161]
+	at java.nio.file.Files.createFile(Files.java:632) ~[?:1.8.0_161]
+	at kafka.log.LogManager$$anonfun$shutdown$6$$anonfun$apply$4.apply$mcV$sp(LogManager.scala:476) ~[kafka_2.11-2.0.1.jar:?]
+	at kafka.utils.CoreUtils$.swallow(CoreUtils.scala:86) [kafka_2.11-2.0.1.jar:?]
+	at kafka.log.LogManager$$anonfun$shutdown$6.apply(LogManager.scala:476) [kafka_2.11-2.0.1.jar:?]
+	at kafka.log.LogManager$$anonfun$shutdown$6.apply(LogManager.scala:464) [kafka_2.11-2.0.1.jar:?]
+	at scala.collection.TraversableLike$WithFilter$$anonfun$foreach$1.apply(TraversableLike.scala:733) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:130) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:130) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:236) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:40) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:130) [scala-library-2.11.12.jar:?]
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:732) [scala-library-2.11.12.jar:?]
+	at kafka.log.LogManager.shutdown(LogManager.scala:464) [kafka_2.11-2.0.1.jar:?]
+	at kafka.server.KafkaServer$$anonfun$shutdown$13.apply$mcV$sp(KafkaServer.scala:598) [kafka_2.11-2.0.1.jar:?]
+	at kafka.utils.CoreUtils$.swallow(CoreUtils.scala:86) [kafka_2.11-2.0.1.jar:?]
+	at kafka.server.KafkaServer.shutdown(KafkaServer.scala:598) [kafka_2.11-2.0.1.jar:?]
+	at org.springframework.kafka.test.EmbeddedKafkaBroker.destroy(EmbeddedKafkaBroker.java:327) [spring-kafka-test-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1034) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1027) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+2020-04-07 15:59:55 [Thread: Thread-10] [ WARN ] CoreUtils$:90 - /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-6714200143416712346/.kafka_cleanshutdown
+java.nio.file.NoSuchFileException: /var/folders/lb/j5nb3nx16f32n8drg7xdwj7h0000gn/T/kafka-6714200143416712346/.kafka_cleanshutdown
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_161]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_161]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_161]
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214) ~[?:1.8.0_161]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_161]
+	at java.nio.file.Files.createFile(Files.java:632) ~[?:1.8.0_161]
+	at kafka.log.LogManager$$anonfun$shutdown$6$$anonfun$apply$4.apply$mcV$sp(LogManager.scala:476) ~[kafka_2.11-2.0.1.jar:?]
+	at kafka.utils.CoreUtils$.swallow(CoreUtils.scala:86) [kafka_2.11-2.0.1.jar:?]
+	at kafka.log.LogManager$$anonfun$shutdown$6.apply(LogManager.scala:476) [kafka_2.11-2.0.1.jar:?]
+	at kafka.log.LogManager$$anonfun$shutdown$6.apply(LogManager.scala:464) [kafka_2.11-2.0.1.jar:?]
+	at scala.collection.TraversableLike$WithFilter$$anonfun$foreach$1.apply(TraversableLike.scala:733) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:130) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap$$anonfun$foreach$1.apply(HashMap.scala:130) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:236) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:40) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.HashMap.foreach(HashMap.scala:130) [scala-library-2.11.12.jar:?]
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:732) [scala-library-2.11.12.jar:?]
+	at kafka.log.LogManager.shutdown(LogManager.scala:464) [kafka_2.11-2.0.1.jar:?]
+	at kafka.server.KafkaServer$$anonfun$shutdown$13.apply$mcV$sp(KafkaServer.scala:598) [kafka_2.11-2.0.1.jar:?]
+	at kafka.utils.CoreUtils$.swallow(CoreUtils.scala:86) [kafka_2.11-2.0.1.jar:?]
+	at kafka.server.KafkaServer.shutdown(KafkaServer.scala:598) [kafka_2.11-2.0.1.jar:?]
+	at org.springframework.kafka.test.EmbeddedKafkaBroker.destroy(EmbeddedKafkaBroker.java:327) [spring-kafka-test-2.2.6.RELEASE.jar:2.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1034) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1027) [spring-beans-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945) [spring-context-5.1.7.RELEASE.jar:5.1.7.RELEASE]
