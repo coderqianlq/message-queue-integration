@@ -7,4 +7,8 @@ Partition offset 偏移量
 Group 消费者组
 Message 消息
 
+## 客户端工具
+
+Kafka Tool
+
 **待补充**

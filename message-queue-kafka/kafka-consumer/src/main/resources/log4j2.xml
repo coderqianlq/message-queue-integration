@@ -63,7 +63,6 @@
         <Logger name="com.qianlq" level="INFO"/>
         <Root level="all">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="FileAll"/>
             <AppenderRef ref="RollingFileInfo"/>
             <AppenderRef ref="RollingFileWarn"/>
             <AppenderRef ref="RollingFileError"/>
