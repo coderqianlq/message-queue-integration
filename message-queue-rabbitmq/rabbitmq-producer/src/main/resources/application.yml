@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: rabbitmq-producer
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888
   rabbitmq:
     host: 127.0.0.1
     port: 5672

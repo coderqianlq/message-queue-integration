@@ -19,4 +19,8 @@
         <module>rabbitmq-consumer</module>
     </modules>
 
+    <properties>
+        <rabbitmq-core.version>1.0.0-SNAPSHOT</rabbitmq-core.version>
+    </properties>
+
 </project>

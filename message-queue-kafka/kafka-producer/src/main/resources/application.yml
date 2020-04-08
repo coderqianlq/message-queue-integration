@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: kafka-producer
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888
   kafka:
     # kafka地址，多个地址之间用逗号分隔
     bootstrap-servers: 127.0.0.1:9092

@@ -14,12 +14,14 @@
         <module>message-queue-activemq</module>
         <module>message-queue-rocketmq</module>
         <module>message-queue-kafka</module>
+        <module>message-queue-admin</module> <!-- Spring Boot Admin -->
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
+        <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
         <jacoco.version>0.8.5</jacoco.version>
         <coveralls.version>4.3.0</coveralls.version>
     </properties>
@@ -37,12 +39,6 @@
     </dependencyManagement>
 
     <build>
-        <resources>
-            <resource>
-                <directory>${basedir}/src/main/resources</directory>
-            </resource>
-        </resources>
-
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -69,8 +65,8 @@
                 <version>${jacoco.version}</version>
                 <configuration>
                     <skip>false</skip>
-                    <destFile>target/coverage-reports/jacoco.exec</destFile>
-                    <dataFile>target/coverage-reports/jacoco.exec</dataFile>
+                    <destFile>${project.build.directory}/coverage-reports/jacoco.exec</destFile>
+                    <dataFile>${project.build.directory}/coverage-reports/jacoco.exec</dataFile>
                 </configuration>
                 <executions>
                     <execution>

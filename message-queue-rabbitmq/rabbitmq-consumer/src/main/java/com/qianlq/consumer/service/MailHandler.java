@@ -3,6 +3,8 @@ package com.qianlq.consumer.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qianlq.consumer.config.MailConfig;
 import com.qianlq.core.model.dto.MailDTO;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -23,6 +25,9 @@ import java.nio.charset.StandardCharsets;
 
 @Service
 public class MailHandler {
+
+    private Logger logger = LogManager.getLogger(MailHandler.class);
+
 
     private ObjectMapper mapper;
 
@@ -45,13 +50,12 @@ public class MailHandler {
         MailDTO dto = null;
         try {
             dto = mapper.readValue(msg.getBytes(StandardCharsets.UTF_8), MailDTO.class);
-            System.out.println(dto.toString());
+            logger.info(dto);
         } catch (IOException e) {
             e.printStackTrace();
         }
         Assert.notNull(dto, "邮件传输实体不能为NULL");
         SimpleMailMessage mailMessage = new SimpleMailMessage();
-        System.out.println(mailConfig.getUsername());
         mailMessage.setFrom(mailConfig.getUsername());
         mailMessage.setTo(dto.getTo());
         mailMessage.setSubject(dto.getSubject());
