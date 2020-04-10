@@ -8,6 +8,8 @@ spring:
     admin:
       client:
         url: http://localhost:8888
+        username: admin
+        password: admin
   kafka:
     # kafka地址，多个地址之间用逗号分隔
     bootstrap-servers: 127.0.0.1:9092
@@ -19,3 +21,16 @@ spring:
       enable-auto-commit: true
       auto-commit-interval: 100
       max-poll-records: 100
+
+logging:
+  config: classpath:log4j2.xml
+  file: logs/${spring.application.name}_info.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

@@ -8,6 +8,8 @@ import com.qianlq.producer.service.MailService;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.StandardCharsets;
+
 /**
  * @author coderqian
  * @version v1.0
@@ -33,7 +35,7 @@ public class MailServiceImpl implements MailService {
         dto.setSubject(subject);
         dto.setContent(content);
         try {
-            rabbitTemplate.convertAndSend(RabbitConstant.MAIL, mapper.writeValueAsString(dto).getBytes());
+            rabbitTemplate.convertAndSend(RabbitConstant.MAIL, mapper.writeValueAsString(dto).getBytes(StandardCharsets.UTF_8));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

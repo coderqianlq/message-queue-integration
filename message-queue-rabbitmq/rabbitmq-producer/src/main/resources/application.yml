@@ -8,8 +8,23 @@ spring:
     admin:
       client:
         url: http://localhost:8888
+        username: admin
+        password: admin
   rabbitmq:
     host: 127.0.0.1
     port: 5672
     username: guest
     password: guest
+
+logging:
+  config: classpath:log4j2.xml
+  file: logs/${spring.application.name}_info.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

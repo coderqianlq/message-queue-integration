@@ -4,3 +4,14 @@ server:
 spring:
   application:
     name: spring-boot-admin
+  security:
+    user:
+      name: admin
+      password: admin
+  boot:
+    admin:
+      instance:
+        metadata:
+          user:
+            name: ${spring.security.user.name}
+            password: ${spring.security.user.password}

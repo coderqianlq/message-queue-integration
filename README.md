@@ -7,6 +7,7 @@
 ## Contents
 
 * [Tasks](#tasks)
+* [Screenshots](#screenshots)
 * [Releases](#releases)
 * [License](#license)
 
@@ -17,11 +18,16 @@
 - [ ] RocketMQ
 - [x] Kafka
 
+## Screenshots
+
+* Sting Boot Admin Dashboard
+![Admin Dashboard](screenshots/Sprin%20Boot%20Admin%20Dashboard.png)
+
 ## Releases
 
-| Spring Boot | Swagger | RabbitMQ | ActiveMQ | RocketMQ | Kafka |
-| :---------: | :-----: | :------: | :------: | :------: | :---: |
-|    2.1.5    |  2.7.0  |  2.1.5   |          |   4.7.0  | 2.2.6 |
+| Spring Boot | Spring Boot Admin | Swagger | RabbitMQ | ActiveMQ | RocketMQ | Kafka |
+| :---------: | :---------------: | :-----: | :------: | :------: | :------: | :---: |
+|    2.1.5    |       2.1.6       |  2.7.0  |  2.1.5   |          |   4.7.0  | 2.2.6 |
 
 ## License
 

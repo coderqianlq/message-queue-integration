@@ -46,7 +46,7 @@ public class MailHandler {
 
     @RabbitListener(queues = {"mail"})
     public void received(Message message) {
-        String msg = new String(message.getBody());
+        String msg = new String(message.getBody(), StandardCharsets.UTF_8);
         MailDTO dto = null;
         try {
             dto = mapper.readValue(msg.getBytes(StandardCharsets.UTF_8), MailDTO.class);
