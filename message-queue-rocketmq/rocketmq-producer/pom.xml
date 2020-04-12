@@ -18,6 +18,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.qianlq</groupId>
+            <artifactId>rocketmq-core</artifactId>
+            <version>${rocketmq-core.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
             <exclusions>
@@ -29,9 +35,14 @@
         </dependency>
 
         <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>${spring-boot-admin.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.1.4.RELEASE</version>
         </dependency>
 
         <dependency>

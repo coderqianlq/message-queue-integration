@@ -8,7 +8,7 @@ import org.springframework.kafka.test.context.EmbeddedKafka;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @author qianliqing
+ * @author coderqian
  * @version v1.0
  * @date 2020-03-28
  */

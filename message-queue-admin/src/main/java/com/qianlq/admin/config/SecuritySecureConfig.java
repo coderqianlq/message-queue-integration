@@ -8,7 +8,7 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 /**
- * @author qianliqing
+ * @author coderqian
  * @version v1.0
  * @date 2020-04-10
  * @description look-for https://codecentric.github.io/spring-boot-admin/2.1.6/#securing-spring-boot-admin

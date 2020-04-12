@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author qianliqing
+ * @author coderqian
  * @version v1.0
  * @date 2020-03-29
  * @description kafka消费者配置 + 开启批量监听

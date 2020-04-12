@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.util.StringUtils;
+import org.springframework.util.Assert;
 
 /**
- * @author qianliqing
+ * @author coderqian
  * @version v1.0
  * @date 2020-03-30
  * @description rocketmq配置类
@@ -24,8 +24,8 @@ public class RocketConfig {
 
     private static Logger logger = LogManager.getLogger(RocketConfig.class);
 
-    @Value("${rocketmq.producer.name-server-addr}")
-    private String nameServerAddr;
+    @Value("${rocketmq.producer.name-srv}")
+    private String nameSrv;
 
     @Value("${rocketmq.producer.group-name}")
     private String groupName;
@@ -41,15 +41,11 @@ public class RocketConfig {
 
     @Bean
     public DefaultMQProducer getRocketMQProducer() throws MQClientException {
-        if (StringUtils.isEmpty(groupName)) {
-            throw new MQClientException(-1, "groupName is blank");
-        }
+        Assert.notNull(nameSrv, "nameServerAddr is blank");
+        Assert.notNull(groupName, "groupName is blank");
 
-        if (StringUtils.isEmpty(nameServerAddr)) {
-            throw new MQClientException(-1, "nameServerAddr is blank");
-        }
         DefaultMQProducer producer = new DefaultMQProducer(this.groupName);
-        producer.setNamesrvAddr(nameServerAddr);
+        producer.setNamesrvAddr(nameSrv);
         // producer.setCreateTopicKey("AUTO_CREATE_TOPIC_KEY");
         // 如果需要同一个jvm中不同的producer往不同的mq集群发送消息，需要设置不同的instanceName
         // producer.setInstanceName(instanceName);
@@ -59,7 +55,7 @@ public class RocketConfig {
 
         try {
             producer.start();
-            logger.info("producer is start ! groupName: {},nameServerAddr: {}", groupName, nameServerAddr);
+            logger.info("producer is start ! groupName: {},nameServerAddr: {}", groupName, nameSrv);
         } catch (MQClientException ex) {
             logger.error("producer is error: {}", ex.getMessage());
             throw ex;
