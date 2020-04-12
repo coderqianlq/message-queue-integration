@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
+import org.apache.rocketmq.common.MixAll;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,8 +25,8 @@ public class RocketConfig {
 
     private static Logger logger = LogManager.getLogger(RocketConfig.class);
 
-    @Value("${rocketmq.producer.name-srv}")
-    private String nameSrv;
+    @Value("${rocketmq.producer.namesrv-addr}")
+    private String namesrvAddr;
 
     @Value("${rocketmq.producer.group-name}")
     private String groupName;
@@ -41,12 +42,12 @@ public class RocketConfig {
 
     @Bean
     public DefaultMQProducer getRocketMQProducer() throws MQClientException {
-        Assert.notNull(nameSrv, "nameServerAddr is blank");
+        Assert.notNull(namesrvAddr, "nameServerAddr is blank");
         Assert.notNull(groupName, "groupName is blank");
 
         DefaultMQProducer producer = new DefaultMQProducer(this.groupName);
-        producer.setNamesrvAddr(nameSrv);
-        // producer.setCreateTopicKey("AUTO_CREATE_TOPIC_KEY");
+        producer.setNamesrvAddr(namesrvAddr);
+        producer.setCreateTopicKey(MixAll.AUTO_CREATE_TOPIC_KEY_TOPIC);
         // 如果需要同一个jvm中不同的producer往不同的mq集群发送消息，需要设置不同的instanceName
         // producer.setInstanceName(instanceName);
         producer.setMaxMessageSize(maxMessageSize);
@@ -55,7 +56,7 @@ public class RocketConfig {
 
         try {
             producer.start();
-            logger.info("producer is start ! groupName: {},nameServerAddr: {}", groupName, nameSrv);
+            logger.info("producer is start ! groupName: {},nameServerAddr: {}", groupName, namesrvAddr);
         } catch (MQClientException ex) {
             logger.error("producer is error: {}", ex.getMessage());
             throw ex;

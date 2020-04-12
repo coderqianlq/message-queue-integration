@@ -16,8 +16,8 @@ rocketmq:
   isEnable: true
   # 生产者配置
   producer:
-    # nameServer地址
-    name-srv: 127.0.0.1:9876
+    # nameSrv地址
+    namesrv-addr: localhost:9876
     group-name: rocketmq-producer-group
     # 消息最大长度 默认1024*4(4M)
     max-message-size: 4096
