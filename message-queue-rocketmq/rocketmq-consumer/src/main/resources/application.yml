@@ -1,0 +1,31 @@
+server:
+  port: 7078
+
+spring:
+  application:
+    name: rocketmq-consumer
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888
+        username: admin
+        password: admin
+
+rocketmq:
+  consumer:
+    # nameSrv地址
+    namesrv-addr: localhost:9876
+    group-name: rocketmq-producer-group
+
+logging:
+  config: classpath:log4j2.xml
+  file: logs/${spring.application.name}_info.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

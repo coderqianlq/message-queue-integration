@@ -3,7 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>rocketmq-producer</artifactId>
+
+    <artifactId>rocketmq-consumer</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -12,9 +13,6 @@
         <groupId>com.qianlq</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-
-    <properties>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -51,20 +49,11 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- 日志 Log4j2 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
 
-        <!-- Apache 并没有把这份代码传到中央仓库 -->
-        <!--<dependency>-->
-        <!--<groupId>org.apache.rocketmq</groupId>-->
-        <!--<artifactId>spring-boot-starter-rocketmq</artifactId>-->
-        <!--<version>1.0.0-SNAPSHOT</version>-->
-        <!--</dependency>-->
-
-        <!-- RocketMQ Client -->
         <dependency>
             <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-client</artifactId>
@@ -81,4 +70,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

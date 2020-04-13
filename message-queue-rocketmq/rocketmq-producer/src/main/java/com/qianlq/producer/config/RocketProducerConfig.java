@@ -13,17 +13,17 @@ import org.springframework.util.Assert;
 
 /**
  * @author coderqian
- * @version v1.0
+ * @version v1.1
  * @date 2020-03-30
- * @description rocketmq配置类
+ * @description rocketmq生产者配置类
  */
 
 
 @Configuration
 @PropertySource(value = "classpath:application.yml", encoding = "utf-8")
-public class RocketConfig {
+public class RocketProducerConfig {
 
-    private static Logger logger = LogManager.getLogger(RocketConfig.class);
+    private static Logger logger = LogManager.getLogger(RocketProducerConfig.class);
 
     @Value("${rocketmq.producer.namesrv-addr}")
     private String namesrvAddr;
@@ -42,7 +42,7 @@ public class RocketConfig {
 
     @Bean
     public DefaultMQProducer getRocketMQProducer() throws MQClientException {
-        Assert.notNull(namesrvAddr, "nameServerAddr is blank");
+        Assert.notNull(namesrvAddr, "nameSrvAddr is blank");
         Assert.notNull(groupName, "groupName is blank");
 
         DefaultMQProducer producer = new DefaultMQProducer(this.groupName);
@@ -56,7 +56,7 @@ public class RocketConfig {
 
         try {
             producer.start();
-            logger.info("producer is start ! groupName: {},nameServerAddr: {}", groupName, namesrvAddr);
+            logger.info("producer is start ! groupName: {},nameSrvAddr: {}", groupName, namesrvAddr);
         } catch (MQClientException ex) {
             logger.error("producer is error: {}", ex.getMessage());
             throw ex;

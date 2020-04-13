@@ -16,10 +16,12 @@
     <modules>
         <module>rocketmq-producer</module>
         <module>rocketmq-core</module>
+        <module>rocketmq-consumer</module>
     </modules>
 
     <properties>
         <rocketmq-core.version>1.0.0-SNAPSHOT</rocketmq-core.version>
+        <rocketmq-client.version>4.7.0</rocketmq-client.version>
     </properties>
 
 </project>

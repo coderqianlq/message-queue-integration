@@ -1,7 +1,7 @@
 package com.qianlq.producer.demo;
 
 import com.qianlq.core.constant.RocketConstant;
-import com.qianlq.producer.config.RocketConfig;
+import com.qianlq.producer.config.RocketProducerConfig;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
@@ -21,7 +21,7 @@ import java.io.UnsupportedEncodingException;
 @Component
 public class RocketProducer {
 
-    private static Logger logger = LogManager.getLogger(RocketConfig.class);
+    private static Logger logger = LogManager.getLogger(RocketProducer.class);
 
     private DefaultMQProducer defaultProducer;
 
