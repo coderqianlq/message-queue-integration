@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @RabbitListener(queues = {RabbitConstant.HEADERS})
 public class HeadersConsumer {
 
-    private Logger logger = LogManager.getLogger(HeadersConsumer.class);
+    private static Logger logger = LogManager.getLogger(HeadersConsumer.class);
 
     private AmqpTemplate rabbitmqTemplate;
 

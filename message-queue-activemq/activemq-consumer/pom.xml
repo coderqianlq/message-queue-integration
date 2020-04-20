@@ -3,8 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>activemq-producer</artifactId>
+    <artifactId>activemq-consumer</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -13,10 +12,6 @@
         <groupId>com.qianlq</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-
-    <properties>
-        <activemq-pool.version>5.15.12</activemq-pool.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -45,13 +40,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-activemq</artifactId>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-pool -->
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-pool</artifactId>
-            <version>${activemq-pool.version}</version>
         </dependency>
 
         <dependency>

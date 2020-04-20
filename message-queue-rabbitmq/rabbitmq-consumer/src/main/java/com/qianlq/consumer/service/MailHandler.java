@@ -26,7 +26,7 @@ import java.nio.charset.StandardCharsets;
 @Service
 public class MailHandler {
 
-    private Logger logger = LogManager.getLogger(MailHandler.class);
+    private static Logger logger = LogManager.getLogger(MailHandler.class);
 
 
     private ObjectMapper mapper;

@@ -1,5 +1,7 @@
 package com.qianlq.producer.demo;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +17,8 @@ import javax.jms.Topic;
 @Component
 public class ActiveProducer {
 
+    private static Logger logger = LogManager.getLogger(ActiveProducer.class);
+
     private JmsMessagingTemplate jms;
 
     private Queue queue;
@@ -27,7 +31,13 @@ public class ActiveProducer {
         this.topic = topic;
     }
 
-    public void send(String message) {
-        jms.convertAndSend(queue, "Send message: " + message);
+    public void send2Queue(String message) {
+        logger.info("[Queue]Send message: {}", message);
+        jms.convertAndSend(queue, "[Queue]Send message: " + message);
+    }
+
+    public void send2Topic(String message) {
+        logger.info("[Topic]Send message: {}", message);
+        jms.convertAndSend(topic, "[Topic]Send Message: " + message);
     }
 }

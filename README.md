@@ -14,7 +14,7 @@
 ## Tasks
 
 - [x] RabbitMQ
-- [ ] ActiveMQ
+- [x] ActiveMQ
 - [x] RocketMQ
 - [x] Kafka
 

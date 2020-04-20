@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @RabbitListener(queues = {RabbitConstant.FANOUT})
 public class FanoutConsumer {
 
-    private Logger logger = LogManager.getLogger(FanoutConsumer.class);
+    private static Logger logger = LogManager.getLogger(FanoutConsumer.class);
 
     private AmqpTemplate rabbitmqTemplate;
 

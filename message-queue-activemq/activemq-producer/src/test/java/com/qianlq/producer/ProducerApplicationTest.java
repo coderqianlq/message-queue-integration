@@ -23,7 +23,12 @@ public class ProducerApplicationTest {
     private ActiveProducer activeProducer;
 
     @Test
-    public void test() {
-        activeProducer.send(LocalDate.now().toString());
+    public void testSend2Queue() {
+        activeProducer.send2Queue(LocalDate.now().toString());
+    }
+
+    @Test
+    public void testSend2Topic() {
+        activeProducer.send2Topic(LocalDate.now().toString());
     }
 }

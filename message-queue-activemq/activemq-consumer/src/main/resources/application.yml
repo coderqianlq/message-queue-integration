@@ -1,24 +1,18 @@
 server:
-  port: 6066
+  port: 6067
 
 spring:
   application:
-    name: activemq-producer
+    name: activemq-consumer
   boot:
     admin:
       client:
-        url: http://localhost:8888
         username: admin
         password: admin
   activemq:
     broker-url: tcp://localhost:61616
     user: admin
     password: admin
-    close-timeout: 5000
-    send-timeout: 3000
-    pool:
-      enabled: true
-      max-connections: 20
 
 logging:
   config: classpath:log4j2.xml
