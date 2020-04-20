@@ -1,7 +1,6 @@
 package com.qianlq.producer.demo;
 
 import com.qianlq.core.constant.RocketConstant;
-import com.qianlq.producer.config.RocketProducerConfig;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
@@ -34,7 +33,6 @@ public class RocketProducer {
         try {
             defaultProducer.send(message);
         } catch (Exception e) {
-            e.printStackTrace();
             logger.error("Send message error." + e.getMessage());
         }
     }

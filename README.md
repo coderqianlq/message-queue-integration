@@ -15,7 +15,7 @@
 
 - [x] RabbitMQ
 - [ ] ActiveMQ
-- [ ] RocketMQ
+- [x] RocketMQ
 - [x] Kafka
 
 ## Screenshots
@@ -27,7 +27,7 @@
 
 | Spring Boot | Spring Boot Admin | Swagger | RabbitMQ | ActiveMQ | RocketMQ | Kafka |
 | :---------: | :---------------: | :-----: | :------: | :------: | :------: | :---: |
-|    2.1.5    |       2.1.6       |  2.7.0  |  2.1.5   |          |   4.7.0  | 2.2.6 |
+|    2.1.5    |       2.1.6       |  2.7.0  |  2.1.5   |  2.1.5   |   4.7.0  | 2.2.6 |
 
 ## License
 
