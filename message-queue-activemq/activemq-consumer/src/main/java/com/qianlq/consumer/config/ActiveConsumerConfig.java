@@ -1,6 +1,8 @@
 package com.qianlq.consumer.config;
 
+import com.qianlq.core.constant.ActiveConstant;
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,6 +10,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
 import org.springframework.util.Assert;
+
+import javax.jms.Queue;
 
 /**
  * @author qianliqing
@@ -28,6 +32,11 @@ public class ActiveConsumerConfig {
 
     @Value("${spring.activemq.password}")
     private String password;
+
+    @Bean
+    public Queue queue() {
+        return new ActiveMQQueue(ActiveConstant.OUT_QUEUE_NAME);
+    }
 
     @Bean
     public ActiveMQConnectionFactory connectionFactory() {

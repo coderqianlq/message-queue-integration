@@ -1,7 +1,9 @@
 package com.qianlq.producer.demo;
 
+import com.qianlq.core.constant.ActiveConstant;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.stereotype.Component;
 
@@ -39,5 +41,10 @@ public class ActiveProducer {
     public void send2Topic(String message) {
         logger.info("[Topic]Send message: {}", message);
         jms.convertAndSend(topic, "[Topic]Send Message: " + message);
+    }
+
+    @JmsListener(destination = ActiveConstant.OUT_QUEUE_NAME)
+    public void received(String message) {
+        logger.info("Received message from consumer: {}", message);
     }
 }

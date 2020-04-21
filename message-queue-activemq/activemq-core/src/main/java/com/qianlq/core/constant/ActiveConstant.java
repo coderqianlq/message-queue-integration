@@ -10,4 +10,5 @@ public class ActiveConstant {
 
     public static final String QUEUE_NAME = "queue0-test";
     public static final String TOPIC_NAME = "topic-test";
+    public static final String OUT_QUEUE_NAME = "queue0-out";
 }
