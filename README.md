@@ -6,28 +6,42 @@
 
 ## Contents
 
-* [Tasks](#tasks)
-* [Screenshots](#screenshots)
-* [Releases](#releases)
+* [Components](#components)
+* [Preview](#preview)
+* [Dependency Chart](#dependency-chart)
+* [Todo List](#todo-list)
 * [License](#license)
 
-## Tasks
+## Components
 
 - [x] RabbitMQ
 - [x] ActiveMQ
 - [x] RocketMQ
 - [x] Kafka
 
-## Screenshots
+## Preview
 
-* Sting Boot Admin Dashboard
-![Admin Dashboard](screenshots/Sprin%20Boot%20Admin%20Dashboard.png)
+* Sting Boot Admin Wallboard
+![Admin Wallboard](screenshots/Sprin%20Boot%20Admin%20Wallboard.png)
 
-## Releases
+* Sting Boot Admin Detail
+![Admin Detail](screenshots/Spring%20Boot%20Admin%20Detail.png)
+
+* Sting Boot Admin Threads
+![Admin Threads](screenshots/Spring%20Boot%20Admin%20Threads.png)
+
+* Sting Boot Admin Logfile
+![Admin Logfile](screenshots/Spring%20Boot%20Admin%20Logfile.png)
+
+## Dependency Chart
 
 | Spring Boot | Spring Boot Admin | Swagger | RabbitMQ | ActiveMQ | RocketMQ | Kafka |
 | :---------: | :---------------: | :-----: | :------: | :------: | :------: | :---: |
 |    2.1.5    |       2.1.6       |  2.7.0  |  2.1.5   |  2.1.5   |   4.7.0  | 2.2.6 |
+
+## Todo List
+- [ ] Add readme to submodule
+- [ ] Add usage in complex scenarios
 
 ## License
 
