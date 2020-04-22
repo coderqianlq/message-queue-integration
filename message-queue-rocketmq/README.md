@@ -10,7 +10,7 @@
 
 [RocketMQ Console](https://github.com/apache/rocketmq-externals/tree/master/rocketmq-console)
 
-## Screenshots
+## Preview
 
 ![RocketMQ Console](../screenshots/RocketMQ%20Console.png)
 
