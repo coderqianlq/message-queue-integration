@@ -12,6 +12,8 @@ import org.springframework.jms.config.JmsListenerContainerFactory;
 import org.springframework.util.Assert;
 
 import javax.jms.Queue;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * @author qianliqing
@@ -44,7 +46,10 @@ public class ActiveConsumerConfig {
         Assert.notNull(user, "user is blank");
         Assert.notNull(password, "password is blank");
 
-        return new ActiveMQConnectionFactory(user, password, brokerUrl);
+        ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(user, password, brokerUrl);
+        connectionFactory.setTrustedPackages(new ArrayList(Arrays.asList("com.qianlq.core.model.dto")));
+
+        return connectionFactory;
     }
 
     @Bean
