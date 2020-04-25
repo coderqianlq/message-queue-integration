@@ -10,9 +10,13 @@
 ## Download
 
 * Kafka server
+
+by `homebrew` 
 ```shell script
 $ brew install kafka
 ```
+
+or by [kafka website](http://kafka.apache.org/downloads) 
 
 * Visual client for kafka
 
