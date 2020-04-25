@@ -69,6 +69,8 @@ public class KafkaConsumerConfig {
         factory.setConsumerFactory(consumerFactory());
         // 开启批量监听
         factory.setBatchListener(true);
+        // 开启多线程消费
+        // factory.setConcurrency(3);
         return factory;
     }
 }

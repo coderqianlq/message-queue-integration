@@ -28,7 +28,7 @@ public class KafkaConsumer {
 
         if (kafkaMessage.isPresent()) {
             Object message = kafkaMessage.get();
-            logger.info("Received message={}", message);
+            logger.info("Received message: {}", message);
         }
     }
 
@@ -39,7 +39,7 @@ public class KafkaConsumer {
 
             if (kafkaMessage.isPresent()) {
                 Object message = record.value();
-                logger.info("Received message={}", message);
+                logger.info("Received message: {}", message);
             }
         }
     }
