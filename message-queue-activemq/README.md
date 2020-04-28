@@ -6,7 +6,7 @@
 
 ## Preview
 
-![ActiveMQ Client](../screenshots/ActiveMQ%20Client.png)
+![ActiveMQ Client](./screenshots/ActiveMQ%20Client.png)
 
 ## FAQ
 

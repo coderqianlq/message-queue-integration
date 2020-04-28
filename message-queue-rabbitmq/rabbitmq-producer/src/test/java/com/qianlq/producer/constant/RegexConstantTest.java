@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 
 public class RegexConstantTest {
 
-    private Pattern pattern = Pattern.compile(RegexConstant.MAIL_FORMAT);
+    private final Pattern pattern = Pattern.compile(RegexConstant.MAIL_FORMAT);
 
     @Test
     public void testRealMailRegex() {

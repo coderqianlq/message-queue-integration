@@ -12,7 +12,7 @@
 
 ## Preview
 
-![RocketMQ Console](../screenshots/RocketMQ%20Console.png)
+![RocketMQ Console](./screenshots/RocketMQ%20Console.png)
 
 ## FAQ
 

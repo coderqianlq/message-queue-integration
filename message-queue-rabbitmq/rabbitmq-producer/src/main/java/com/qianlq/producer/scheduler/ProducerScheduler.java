@@ -1,6 +1,8 @@
 package com.qianlq.producer.scheduler;
 
 import com.qianlq.producer.demo.RabbitProducer;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +18,8 @@ import java.util.Date;
 @Component
 public class ProducerScheduler {
 
+    private static Logger logger = LogManager.getLogger(ProducerScheduler.class);
+
     private static final String PATTERN = "YYYY-mm-DD hh:MM:ss";
 
     private RabbitProducer rabbitProducer;
@@ -26,6 +30,8 @@ public class ProducerScheduler {
 
     @Scheduled(cron = "5 * * * * ?")
     public void produce() {
-        rabbitProducer.directSend(new SimpleDateFormat(PATTERN).format(new Date()));
+        String message = new SimpleDateFormat(PATTERN).format(new Date());
+        rabbitProducer.directSend(message);
+        logger.info("[Direct]Send message: {}", message);
     }
 }
